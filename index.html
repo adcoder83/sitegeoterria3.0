@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>GÉOTERRIA - Expertise Géotechnique</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <div id="background-3d">
+    <canvas id="canvas-bg"></canvas>
+    <div class="bg-gradient-overlay"></div>
+  </div>
+  <header>
+    <nav class="main-nav glass-blur">
+      <div class="logo">
+        <img src="images/logo-geoterria.png" alt="GÉOTERRIA" style="height:48px;">
+      </div>
+      <div id="burger-menu" class="burger-menu" aria-label="Menu" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="nav-links" id="nav-links">
+        <a href="#accueil" data-page="accueil" class="active">Accueil</a>
+        <a href="#apropos" data-page="apropos">À propos</a>
+        <a href="#prestations" data-page="prestations">Prestations</a>
+        <a href="#equipe" data-page="equipe">Équipe</a>
+        <a href="#contact" data-page="contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+  <main id="main-content" tabindex="0" aria-live="polite"></main>
+
+  <!-- Modale équipe -->
+  <div id="modal-backdrop" class="modal-backdrop" style="display:none;">
+    <div class="modal-card glass-blur" id="modal-card">
+      <span class="modal-close" id="modal-close">&times;</span>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 GÉOTERRIA – Bureau d’études géotechniques. Tous droits réservés.</p>
+      <p>
+        <a href="mailto:contact@geoterria.com">contact@geoterria.com</a> | 
+        42 Avenue Irène et Jean Frédéric Joliot Curie, 83130 La Garde
+      </p>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+  <script src="bg3d.js"></script>
+</body>
+</html>
