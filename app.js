@@ -81,7 +81,6 @@ function getAccueilHTML() {
     <section class="page-section hero" id="hero-section">
       <h1>GÉOTERRIA</h1>
       <div class="typing" id="typing-text"></div>
-      <button class="cta-btn" id="cta-btn-hero">Demander un devis</button>
     </section>
   `;
 }
@@ -158,10 +157,6 @@ function renderPage(page) {
       setTimeout(() => {
         document.getElementById('hero-section').classList.add('visible');
         startTypingEffect();
-        bindRippleBtn(document.getElementById('cta-btn-hero'));
-        document.getElementById('cta-btn-hero').onclick = () => {
-          window.location.hash = 'contact';
-        };
       }, 60);
       mainContent.classList.add('parallax');
       break;
