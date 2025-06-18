@@ -242,9 +242,7 @@ body {
   font-size: 1.09em;
   position: relative;
 }
-.glass-blur {
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
+
 }
 #modal-content h3 {
   margin-top: 0;
