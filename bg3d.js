@@ -40,8 +40,8 @@ function render() {
     ctx.beginPath();
     ctx.arc(px, py, p.r*p.z, 0, Math.PI*2);
     ctx.fillStyle = p.color;
-    ctx.shadowColor = "#3bb5ff";
-    ctx.shadowBlur = 12*p.z;
+    ctx.shadowColor = "#67b0e5";
+    ctx.shadowBlur = 9*p.z;
     ctx.fill();
     ctx.shadowBlur = 0;
     p.x += p.dx*p.z;
