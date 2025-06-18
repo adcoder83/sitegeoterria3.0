@@ -66,7 +66,6 @@ const services = [
   }
 ];
 
-// --- Navigation ---
 const mainContent = document.getElementById('main-content');
 const navLinks = document.querySelectorAll('.nav-links a');
 function setActiveLink(page) {
@@ -275,7 +274,7 @@ function showMemberModal(memberKey) {
   const modalContent = document.getElementById('modal-content');
   modalContent.innerHTML = `
     <h3>${member.nom}</h3>
-    <p style="color:#888;font-size:1.07em;margin-bottom:.7em;">${member.role}</p>
+    <p style="color:#19507a;font-size:1.07em;margin-bottom:.7em;">${member.role}</p>
     <p><strong>Parcours :</strong> ${member.parcours}</p>
     <p><strong>Missions :</strong> ${member.missions}</p>
   `;
