@@ -24,7 +24,9 @@ body {
   position: relative;
   z-index: 900;
   min-height: 60px;
+  color: #22344a;
 }
+
 .logo img {
   height: 48px;
 }
@@ -114,6 +116,7 @@ body {
   border-radius: 20px;
   box-shadow: 0 4px 30px #1e3b5831;
   margin-top: 2.3rem;
+  color: #22344a;
 }
 
 .section-title {
@@ -138,6 +141,7 @@ body {
   box-shadow: 0 2px 14px #21558910;
   opacity: 0; transform: scale(0.97);
   transition: opacity 0.2s, transform 0.2s;
+  color: #22344a;
 }
 .service-card.visible {
   opacity: 1; transform: scale(1);
@@ -176,6 +180,7 @@ body {
   opacity: 0; transform: scale(0.97);
   min-height: 110px;
   display: flex; flex-direction:column; justify-content:center; align-items:center;
+  color: #22344a;
 }
 .team-card.visible {
   opacity: 1; transform: scale(1);
@@ -206,6 +211,7 @@ body {
   border-radius: 12px;
   font-size: 1.07em;
   margin-bottom: 1em;
+  color: #22344a;
 }
 .contact-info strong {
   color: #215589;
