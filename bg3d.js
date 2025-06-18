@@ -1,9 +1,9 @@
-// 3D floating particles background with parallax mouse effect
+// 3D background: doux, parallax modéré
 const canvas = document.getElementById('canvas-bg');
 const ctx = canvas.getContext('2d');
 let w = window.innerWidth, h = window.innerHeight;
 let particles = [];
-const PCOUNT = 38;
+const PCOUNT = 20;
 function resizeCanvas() {
   w = window.innerWidth; h = window.innerHeight;
   canvas.width = w; canvas.height = h;
@@ -12,15 +12,15 @@ window.addEventListener('resize', resizeCanvas);
 resizeCanvas();
 
 function genParticle() {
-  const r = 32 + Math.random()*44;
+  const r = 32 + Math.random()*26;
   return {
     x: Math.random()*w,
     y: Math.random()*h,
-    z: 0.2 + Math.random()*0.8,
+    z: 0.18 + Math.random()*0.5,
     r,
-    color: `rgba(${Math.round(70+60*Math.random())},${Math.round(130+120*Math.random())},255,${0.13+0.17*Math.random()})`,
-    dx: (Math.random()-0.5)*.15,
-    dy: (Math.random()-0.5)*.15,
+    color: `rgba(${Math.round(80+40*Math.random())},${Math.round(170+40*Math.random())},255,${0.10+0.11*Math.random()})`,
+    dx: (Math.random()-0.5)*.08,
+    dy: (Math.random()-0.5)*.08,
     swing: Math.random()*Math.PI*2
   }
 }
@@ -34,24 +34,23 @@ window.addEventListener('mousemove', e => {
 function render() {
   ctx.clearRect(0,0,w,h);
   for (let p of particles) {
-    // 3D parallax
-    let px = p.x + (mouse.x-w/2)*p.z*0.14 + Math.cos(p.swing)*14*p.z;
-    let py = p.y + (mouse.y-h/2)*p.z*0.10 + Math.sin(p.swing)*11*p.z;
+    // Parallax doux
+    let px = p.x + (mouse.x-w/2)*p.z*0.07 + Math.cos(p.swing)*10*p.z;
+    let py = p.y + (mouse.y-h/2)*p.z*0.04 + Math.sin(p.swing)*8*p.z;
     ctx.beginPath();
     ctx.arc(px, py, p.r*p.z, 0, Math.PI*2);
     ctx.fillStyle = p.color;
     ctx.shadowColor = "#3bb5ff";
-    ctx.shadowBlur = 32*p.z;
+    ctx.shadowBlur = 12*p.z;
     ctx.fill();
     ctx.shadowBlur = 0;
-    // Move a bit
     p.x += p.dx*p.z;
     p.y += p.dy*p.z;
-    p.swing += 0.012*p.z;
-    if (p.x<-80) p.x = w+80;
-    if (p.x>w+80) p.x = -80;
-    if (p.y<-80) p.y = h+80;
-    if (p.y>h+80) p.y = -80;
+    p.swing += 0.008*p.z;
+    if (p.x<-60) p.x = w+60;
+    if (p.x>w+60) p.x = -60;
+    if (p.y<-60) p.y = h+60;
+    if (p.y>h+60) p.y = -60;
   }
   requestAnimationFrame(render);
 }
